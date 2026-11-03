@@ -28,8 +28,10 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends libgl1 libglib2.0-0 fonts-dejavu-core
 
-      - name: Install CPU-only torch
-        run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - name: Install CPU-only torch + torchvision (matching pair)
+        # torch and torchvision MUST come from the same index in one command,
+        # otherwise transformers fails with "operator torchvision::nms does not exist".
+        run: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
       - name: Install Python dependencies
         run: |

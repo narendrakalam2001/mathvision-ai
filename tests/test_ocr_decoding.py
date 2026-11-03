@@ -14,7 +14,10 @@ import pytest
 torch = pytest.importorskip("torch")
 transformers = pytest.importorskip("transformers")
 
-from transformers import TrOCRConfig, VisionEncoderDecoderConfig, VisionEncoderDecoderModel, ViTConfig  # noqa: E402
+try:  # a mismatched torch/torchvision pair makes this import fail on some hosts
+    from transformers import TrOCRConfig, VisionEncoderDecoderConfig, VisionEncoderDecoderModel, ViTConfig  # noqa: E402
+except Exception as exc:  # noqa: BLE001
+    pytest.skip(f"TrOCR classes cannot be imported on this host: {exc}", allow_module_level=True)
 
 import src.ocr_engine as ocr_engine  # noqa: E402
 from src.ocr_engine import _TrOCRBackend, shifted_greedy_decode  # noqa: E402

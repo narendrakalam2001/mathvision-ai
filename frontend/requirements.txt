@@ -1,0 +1,17 @@
+# Lean dependencies for STREAMLIT COMMUNITY CLOUD (frontend/app.py).
+# Streamlit Cloud has ~2.7 GB / limited RAM, so torch, whisper, pix2tex,
+# chromadb, sentence-transformers and jupyter are intentionally left out.
+# Works: typed-LaTeX solving, steps, graphs, Gemini explanations, gTTS voice,
+# MathBot, dashboard, formula sheet. Photo OCR / RAG / voice-input are
+# disabled automatically (the app degrades gracefully).
+numpy>=1.26,<2.0
+pandas>=2.2
+sympy>=1.12
+matplotlib>=3.8
+opencv-python-headless>=4.9
+Pillow>=10.2
+antlr4-python3-runtime==4.11
+google-genai>=1.0
+gTTS>=2.5
+streamlit>=1.50
+python-dotenv>=1.0
