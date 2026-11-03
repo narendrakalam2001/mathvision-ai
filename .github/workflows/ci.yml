@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Lint + Unit Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libgl1 libglib2.0-0 fonts-dejavu-core
+
+      - name: Install CPU-only torch
+        run: pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pytest with coverage
+        run: pytest --cov=src --cov=services --cov=serving --cov-report=term-missing
+
+      - name: Solver accuracy check (synthetic NCERT-style problems)
+        run: python scripts/eval_solver.py --count 300 --min-solve-rate 0.95 --json metrics/solver_metrics.json
+
+      - name: Upload solver metrics
+        uses: actions/upload-artifact@v4
+        with:
+          name: solver-metrics
+          path: metrics/solver_metrics.json
+
+      - name: Smoke-test synthetic data generator
+        run: python scripts/generate_problems.py --count 20 --seed 1
+
+      - name: Smoke-test OCR training pipeline (dry run)
+        run: python scripts/train_ocr.py --dry-run
+
+  docker-build:
+    name: Docker Build Test
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t mathvision-ai:ci .
+
+      - name: Smoke-test the built image's health endpoint
+        run: |
+          docker run -d --name mathvision-ci -p 8000:8000 mathvision-ai:ci
+          for i in $(seq 1 20); do
+            if curl -fs http://localhost:8000/health; then
+              echo "Health check passed"
+              exit 0
+            fi
+            echo "Waiting for container to become healthy... ($i/20)"
+            sleep 3
+          done
+          echo "Container failed to become healthy in time"
+          docker logs mathvision-ci
+          exit 1
+
+      - name: Tear down container
+        if: always()
+        run: docker rm -f mathvision-ci || true

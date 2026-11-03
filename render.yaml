@@ -1,0 +1,31 @@
+# Render blueprint - FastAPI backend only (Docker).
+# The Streamlit frontend is deployed on Streamlit Community Cloud
+# (see README / deployment steps), so it is NOT defined here.
+# Free plan: no persistent disk, so student profiles reset on redeploy.
+# Photo OCR needs >= 4 GB RAM (paid plan + DOWNLOAD_MODEL=1 build arg).
+
+services:
+  - type: web
+    name: mathvision-ai-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: LOG_LEVEL
+        value: INFO
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.1-flash-lite
+      - key: WOLFRAMALPHA_APP_ID
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: HUGGINGFACE_TOKEN
+        sync: false
+      - key: ENABLE_WOLFRAM_FALLBACK
+        value: "true"
+      - key: ENABLE_GEMINI_EXPLANATIONS
+        value: "true"

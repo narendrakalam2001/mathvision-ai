@@ -1,0 +1,78 @@
+# ============================================================
+# MathVision AI - .gitignore
+# Push ONLY what Render (Docker API) + Streamlit Cloud need.
+# ============================================================
+
+# --- Secrets (NEVER push) --------------------------------------
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+hf_token.txt
+*.pem
+*.key
+
+# --- Accidental nested copy of the project ----------------------
+/mathvision-ai/
+/mathvision-ai - Copy/
+
+# --- Python ------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Jupyter -----------------------------------------------------
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# --- Large datasets / model weights (use HuggingFace Hub instead) -
+# Fine-tuned TrOCR (model.safetensors 2.23 GB, tokenizer, configs...) lives on
+# HuggingFace Hub -> `python scripts/download_model.py` fetches it locally.
+# EVERYTHING inside models/trocr_finetuned/ is ignored except .gitkeep.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/ncert_problems/*
+!data/ncert_problems/.gitkeep
+models/trocr_finetuned/*
+!models/trocr_finetuned/.gitkeep
+models/symbol_classifier/*
+!models/symbol_classifier/.gitkeep
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+*.onnx
+*.zip
+
+# --- Runtime-generated data --------------------------------------
+chromadb_store/*
+!chromadb_store/.gitkeep
+data/student_profiles/*
+!data/student_profiles/.gitkeep
+logs/
+*.log
+metrics/
+
+# --- Local test images (keep the original sample photos) ---------
+sample_problems/*_line*.png
+sample_problems/*_cropped.png
+
+# --- OS / IDE ----------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

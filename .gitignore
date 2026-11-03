@@ -1,0 +1,50 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data / models (large, regenerate via scripts or download from Kaggle/HF)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/ncert_problems/images/
+data/ncert_problems/manifest.csv
+models/trocr_finetuned/*
+!models/trocr_finetuned/.gitkeep
+models/symbol_classifier/*
+!models/symbol_classifier/.gitkeep
+chromadb_store/*
+!chromadb_store/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# generated metrics / local test images
+metrics/
+sample_problems/*_line*.png
+sample_problems/*_cropped.png
+hf_token.txt
+
+# personal learning data (never commit)
+data/student_profiles/*.json

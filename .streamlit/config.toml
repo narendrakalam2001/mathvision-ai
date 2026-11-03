@@ -1,0 +1,14 @@
+# Streamlit settings for MathVision AI (project brand colours from the product spec)
+[theme]
+primaryColor = "#FF6F00"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#E3F2FD"
+textColor = "#1A1A2E"
+font = "sans serif"
+
+[client]
+toolbarMode = "viewer"      # hides the dev-only "Deploy" button for students
+showErrorDetails = "none"   # never show Python tracebacks to students
+
+[browser]
+gatherUsageStats = false

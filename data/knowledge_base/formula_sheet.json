@@ -1,0 +1,170 @@
+{
+  "algebra": [
+    {
+      "name": "Quadratic Formula",
+      "latex": "x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}",
+      "description": "Solves ax^2 + bx + c = 0 for real coefficients a, b, c (a != 0).",
+      "class_level": "Class 10"
+    },
+    {
+      "name": "Discriminant",
+      "latex": "D = b^2 - 4ac",
+      "description": "D>0: two real roots, D=0: one repeated real root, D<0: complex roots.",
+      "class_level": "Class 10"
+    },
+    {
+      "name": "(a+b)^2",
+      "latex": "(a+b)^2 = a^2 + 2ab + b^2",
+      "description": "Square of a sum identity.",
+      "class_level": "Class 8"
+    },
+    {
+      "name": "(a-b)^2",
+      "latex": "(a-b)^2 = a^2 - 2ab + b^2",
+      "description": "Square of a difference identity.",
+      "class_level": "Class 8"
+    },
+    {
+      "name": "a^2 - b^2",
+      "latex": "a^2 - b^2 = (a+b)(a-b)",
+      "description": "Difference of squares factorization.",
+      "class_level": "Class 8"
+    },
+    {
+      "name": "Sum and Product of Roots (Vieta's)",
+      "latex": "\\alpha + \\beta = -\\frac{b}{a}, \\quad \\alpha \\beta = \\frac{c}{a}",
+      "description": "JEE shortcut for quadratic equations: relates roots directly to coefficients.",
+      "class_level": "JEE"
+    }
+  ],
+  "trigonometry": [
+    {
+      "name": "Pythagorean Identity",
+      "latex": "\\sin^2\\theta + \\cos^2\\theta = 1",
+      "description": "Fundamental trigonometric identity.",
+      "class_level": "Class 10"
+    },
+    {
+      "name": "Tan-Sec Identity",
+      "latex": "1 + \\tan^2\\theta = \\sec^2\\theta",
+      "description": "Derived from the Pythagorean identity.",
+      "class_level": "Class 11"
+    },
+    {
+      "name": "Cot-Cosec Identity",
+      "latex": "1 + \\cot^2\\theta = \\csc^2\\theta",
+      "description": "Derived from the Pythagorean identity.",
+      "class_level": "Class 11"
+    },
+    {
+      "name": "Sine Rule",
+      "latex": "\\frac{a}{\\sin A} = \\frac{b}{\\sin B} = \\frac{c}{\\sin C}",
+      "description": "Relates the sides of a triangle to the sines of its opposite angles.",
+      "class_level": "Class 11"
+    },
+    {
+      "name": "Cosine Rule",
+      "latex": "c^2 = a^2 + b^2 - 2ab\\cos C",
+      "description": "Generalization of the Pythagorean theorem to any triangle.",
+      "class_level": "Class 11"
+    }
+  ],
+  "calculus": [
+    {
+      "name": "Power Rule (Differentiation)",
+      "latex": "\\frac{d}{dx} x^n = n x^{n-1}",
+      "description": "Basic differentiation rule for powers of x.",
+      "class_level": "Class 12"
+    },
+    {
+      "name": "Power Rule (Integration)",
+      "latex": "\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C, \\quad n \\neq -1",
+      "description": "Basic integration rule for powers of x.",
+      "class_level": "Class 12"
+    },
+    {
+      "name": "Derivative of sin(x)",
+      "latex": "\\frac{d}{dx}\\sin x = \\cos x",
+      "description": "Standard trigonometric derivative.",
+      "class_level": "Class 12"
+    },
+    {
+      "name": "Derivative of e^x",
+      "latex": "\\frac{d}{dx}e^x = e^x",
+      "description": "The exponential function is its own derivative.",
+      "class_level": "Class 12"
+    },
+    {
+      "name": "Product Rule",
+      "latex": "\\frac{d}{dx}[u v] = u'v + uv'",
+      "description": "Differentiates the product of two functions.",
+      "class_level": "Class 12"
+    },
+    {
+      "name": "Chain Rule",
+      "latex": "\\frac{d}{dx} f(g(x)) = f'(g(x)) \\cdot g'(x)",
+      "description": "Differentiates a composition of functions.",
+      "class_level": "Class 12"
+    }
+  ],
+  "coordinate_geometry": [
+    {
+      "name": "Distance Formula",
+      "latex": "d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}",
+      "description": "Distance between two points in the Cartesian plane.",
+      "class_level": "Class 10"
+    },
+    {
+      "name": "Section Formula",
+      "latex": "\\left(\\frac{m x_2 + n x_1}{m+n}, \\frac{m y_2 + n y_1}{m+n}\\right)",
+      "description": "Coordinates of a point dividing a segment in ratio m:n.",
+      "class_level": "Class 10"
+    },
+    {
+      "name": "Slope of a Line",
+      "latex": "m = \\frac{y_2-y_1}{x_2-x_1}",
+      "description": "Slope between two points on a line.",
+      "class_level": "Class 10"
+    }
+  ],
+  "statistics_probability": [
+    {
+      "name": "Mean",
+      "latex": "\\bar{x} = \\frac{\\sum x_i}{n}",
+      "description": "Arithmetic average of a dataset.",
+      "class_level": "Class 10"
+    },
+    {
+      "name": "Probability",
+      "latex": "P(E) = \\frac{\\text{favorable outcomes}}{\\text{total outcomes}}",
+      "description": "Classical definition of probability.",
+      "class_level": "Class 10"
+    },
+    {
+      "name": "Variance",
+      "latex": "\\sigma^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n}",
+      "description": "Measures spread of a dataset around the mean.",
+      "class_level": "Class 11"
+    }
+  ],
+  "matrices_vectors": [
+    {
+      "name": "2x2 Determinant",
+      "latex": "\\det\\begin{pmatrix}a & b \\\\ c & d\\end{pmatrix} = ad - bc",
+      "description": "Determinant of a 2x2 matrix.",
+      "class_level": "Class 12"
+    },
+    {
+      "name": "Dot Product",
+      "latex": "\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}|\\cos\\theta",
+      "description": "Scalar product of two vectors.",
+      "class_level": "Class 12"
+    },
+    {
+      "name": "Cross Product Magnitude",
+      "latex": "|\\vec{a} \\times \\vec{b}| = |\\vec{a}||\\vec{b}|\\sin\\theta",
+      "description": "Magnitude of the vector product of two vectors.",
+      "class_level": "Class 12"
+    }
+  ]
+}
