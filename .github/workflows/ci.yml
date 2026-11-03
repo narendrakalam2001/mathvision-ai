@@ -32,7 +32,11 @@ jobs:
         run: pip install torch --index-url https://download.pytorch.org/whl/cpu
 
       - name: Install Python dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          # Test tooling installed explicitly so CI never depends on what
+          # requirements.txt happens to contain (fixes "pytest: command not found").
+          pip install pytest pytest-cov httpx python-multipart nbformat
 
       - name: Run pytest with coverage
         run: pytest --cov=src --cov=services --cov=serving --cov-report=term-missing

@@ -65,7 +65,7 @@ Students write on paper. Private tutors cost ₹500–2,000 per hour, and video 
 
 | Service | URL |
 |---|---|
-| 🎓 **Student App — Lite (Streamlit Cloud)** | [https://mathvision-ai.streamlit.app](https://mathvision-ai.streamlit.app) |
+| 🎓 **Student App — Lite (Streamlit Cloud)** | [https://mathvision-ai-lite.streamlit.app](https://mathvision-ai-lite.streamlit.app) |
 | 💻 **GitHub Repository** | [narendrakalam2001/mathvision-ai](https://github.com/narendrakalam2001/mathvision-ai) |
 | 🤗 **Fine-tuned OCR model** | [narendrakalam2001/trocr-math-ep4](https://huggingface.co/narendrakalam2001/trocr-math-ep4) |
 | 📓 **EDA Notebook** | [notebooks/mathvision_ai_eda.ipynb](notebooks/mathvision_ai_eda.ipynb) |
