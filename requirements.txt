@@ -1,17 +1,54 @@
-# Lean dependencies for STREAMLIT COMMUNITY CLOUD (frontend/app.py).
-# Streamlit Cloud has ~2.7 GB / limited RAM, so torch, whisper, pix2tex,
-# chromadb, sentence-transformers and jupyter are intentionally left out.
-# Works: typed-LaTeX solving, steps, graphs, Gemini explanations, gTTS voice,
-# MathBot, dashboard, formula sheet. Photo OCR / RAG / voice-input are
-# disabled automatically (the app degrades gracefully).
+# === MathVision AI — Python dependencies ===
+# Day 1: image processing, OCR, LaTeX parsing, problem classification,
+# synthetic data generation, notebook tooling.
+# Day 2: math solving, explanations, voice, RAG, chatbot, gamification.
+# Day 3: API server, frontend app.
+
+# --- Core scientific stack ---
 numpy>=1.26,<2.0
 pandas>=2.2
 sympy>=1.12
 matplotlib>=3.8
+
+# --- Image processing ---
 opencv-python-headless>=4.9
 Pillow>=10.2
-antlr4-python3-runtime==4.11
-google-genai>=1.0
+
+# --- OCR (TrOCR + Pix2Tex) ---
+torch>=2.2
+transformers>=4.46,<5   # v5 breaks TrOCR tokenizer loading; models trained on 4.57
+pix2tex>=0.1.2
+antlr4-python3-runtime==4.11   # required by sympy.parsing.latex
+
+# --- Math solver fallbacks (Day 2) ---
+wolframalpha>=5.0
+google-genai>=1.0           # Gemini API (official SDK; gemini-1.5-* models are retired)
+
+# --- Voice engine (Day 2) ---
 gTTS>=2.5
-streamlit>=1.50
+openai-whisper>=20231117
+elevenlabs>=1.0
+
+# --- RAG + MathBot (Day 2) ---
+chromadb>=0.5
+sentence-transformers>=2.7
+pymupdf>=1.24   # PDF text extraction for knowledge-base ingestion
+
+# --- API server + frontend (Day 3) ---
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9   # required by FastAPI for file uploads (/solve, /voice-question)
+streamlit>=1.50   # width="stretch" API
+
+# --- Config / env ---
 python-dotenv>=1.0
+
+# --- Dev / notebook tooling ---
+jupyter>=1.0
+nbformat>=5.10
+ipykernel>=6.29
+
+# --- Testing ---
+pytest>=8.0
+pytest-cov>=4.1
+httpx>=0.27   # required by fastapi.testclient.TestClient
