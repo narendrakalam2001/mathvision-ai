@@ -352,11 +352,11 @@ The Gemini model name lives in `.env` (`GEMINI_MODEL`) because Google retires mo
 ### 3. Download the OCR Weights (2.2 GB — Full mode only)
 
 ```bash
-python scripts/download_model.py --token hf_xxx          # HF read token
+python scripts/download_model.py          # public HF repo — no token needed
 python scripts/check_ocr.py sample_problems/photo1.jpeg --preprocess   # sanity check
 ```
 
-Weights land in `models/trocr_finetuned/` (git-ignored). Skip this step to run in Lite mode — the app then uses Gemini vision for photos.
+The model repo [`narendrakalam2001/trocr-math-ep4`](https://huggingface.co/narendrakalam2001/trocr-math-ep4) is **public**, so no HuggingFace token or login is required. Weights land in `models/trocr_finetuned/` (git-ignored). Skip this step to run in Lite mode — the app then uses Gemini vision for photos.
 
 ### 4. Build the Knowledge Base
 
@@ -419,7 +419,7 @@ GEMINI_API_KEY = "your_key"
 GEMINI_MODEL = "gemini-3.1-flash-lite"
 ```
 
-No `HUGGINGFACE_TOKEN` is needed on Streamlit Cloud — the 2.2 GB model is never downloaded there.
+No `HUGGINGFACE_TOKEN` is needed anywhere — the model repo is public, and on Streamlit Cloud the 2.2 GB model is never downloaded at all.
 
 ---
 
