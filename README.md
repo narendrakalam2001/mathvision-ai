@@ -16,7 +16,7 @@
 > **Problem:** Read a *handwritten* maths problem from a photo → solve it exactly → explain every step (English / Hindi / Hinglish, text + voice) → clear follow-up doubts → track weak topics  
 > **Dataset:** [CROHME handwritten expressions](https://www.kaggle.com/datasets/rtatman/handwritten-mathematical-expressions) · [Handwritten math symbols](https://www.kaggle.com/datasets/sagyamthapa/handwritten-math-symbols) · SymPy-generated NCERT-style problems  
 > **Curriculum focus:** NCERT / CBSE Class 8–12 and JEE-style algebra, trigonometry, calculus, matrices and vectors  
-> **Industry Context:** Photomath · Doubtnut · BYJU'S · Vedantu · Unacademy — India's EdTech market is video-first (passive); doubt-solving from a *handwritten* photo, with step-by-step reasoning in the student's own language, is the gap this project targets
+> **Industry Context:** India's EdTech market is video-first (passive); doubt-solving from a *handwritten* photo, with step-by-step reasoning in the student's own language, is the gap this project targets
 
 ---
 
@@ -706,7 +706,7 @@ Figures marked *(assumption)* come from the project brief, not from a measuremen
 
 ## 🆚 How MathVision AI Differs
 
-Established apps such as Photomath already read handwriting (since 2016) and work offline, so those are **not** claimed as differentiators. What this project focuses on:
+Established doubt-solving apps already read handwriting (since 2016) and work offline, so those are **not** claimed as differentiators. What this project focuses on:
 
 | Focus | MathVision AI |
 |---|---|
@@ -751,9 +751,9 @@ Established apps such as Photomath already read handwriting (since 2016) and wor
 
 > Building 30+ industry-level, end-to-end ML systems across all domains.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/narendra-kalam/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/narendra-kalam)
 [![Kaggle](https://img.shields.io/badge/Kaggle-Profile-20BEFF?logo=kaggle)](https://www.kaggle.com/narendrakalam)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green?logo=github)](https://narendrakalam2001.github.io/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-green?logo=github)](https://narendrakalam2001.github.io)
 [![Email](https://img.shields.io/badge/Email-Contact-red?logo=gmail)](mailto:kalamnarendra2001@gmail.com)
 
 ### Portfolio Projects
@@ -789,7 +789,7 @@ Established apps such as Photomath already read handwriting (since 2016) and wor
 | 27 | AgriSense AI | AgriTech | EfficientNetB3 | Accuracy = 98.44% · Macro-F1 = 0.9843 · 38 classes |
 | 28 | AI Loan Underwriting Platform | BFSI / Fintech | XGBoost (credit + fraud) | Credit ROC-AUC = 0.858 · Fraud ROC-AUC = 0.955 · 242 tests |
 | 29 | CineMatch Pro | Entertainment / Media Tech | Hybrid SVD + TF-IDF + SBERT · CLIP · RoBERTa | RMSE = 0.8005 · Sentiment Acc = 94.26% · 56K posters |
-| 30 | DriveGuard AI | Computer Vision / Smart Cities | YOLOv8m + DeepSORT + Gemini RAG | mAP@0.5 = 0.680 · 31 API routes · 336 tests |
+| 30 | DriveGuard AI | Computer Vision / Smart Cities | YOLOv8m + DeepSORT + Gemini RAG | mAP@0.5 = 0.680 · 31 API routes · 364 tests |
 | 31 | **MathVision AI** | **EdTech / Computer Vision** | **TrOCR-large + SymPy** | **CER = 0.138 · 350/350 symbolic solved** |
 
 ---
